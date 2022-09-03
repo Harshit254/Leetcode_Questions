@@ -15,7 +15,7 @@ public:
 		if(l>r)return NULL;
 		TreeNode *node=new TreeNode(a[i]);
 		i--;
-		if(i==a.size())
+		if(l==r)
 			return node;
 		int j=l;
 		while(b[j]!=a[i+1])j++;
