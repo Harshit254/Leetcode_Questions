@@ -43,21 +43,11 @@
 
 class Solution {
 public:
-    
-//     Solution(){
-//         ios::sync_with_stdio(0);
-//         cin.tie(0);
-//         cout.tie(0);
-//     }
-    
     bool isLeaf(TreeNode* root){
-        
         return root!=NULL and root->left==NULL and root->right==NULL;
-        
     }
     
     TreeNode* removeLeafNodes(TreeNode* root, int target) {
-        
         if(root==NULL) return NULL;
         root->left = removeLeafNodes(root->left,target);
         root->right = removeLeafNodes(root->right,target);
