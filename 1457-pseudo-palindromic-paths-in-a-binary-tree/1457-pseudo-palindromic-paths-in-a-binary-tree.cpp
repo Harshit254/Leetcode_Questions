@@ -17,8 +17,6 @@ public:
         if(root==NULL) return;
         
         temp[root->val]++;
-        function(root->left,temp);
-        function(root->right,temp);
         if(root->left==NULL && root->right==NULL)
         {
             int flag=0;
@@ -29,6 +27,8 @@ public:
             
             if(flag==0 || flag==1) count++;
         }
+        function(root->left,temp);
+        function(root->right,temp);
         temp[root->val]--;
     }
     int pseudoPalindromicPaths (TreeNode* root) {
