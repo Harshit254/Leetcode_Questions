@@ -28,6 +28,7 @@ public:
             //dp.pop_back();
             function(root->right,target,ans,dp);
             dp.pop_back();
+            target=target+root->val;
     }
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
         vector<vector<int>>ans;
