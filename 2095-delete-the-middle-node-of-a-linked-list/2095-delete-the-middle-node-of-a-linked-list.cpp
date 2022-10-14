@@ -25,16 +25,7 @@ public:
             fast=fast->next->next;
         }
         vslow->next=slow->next;
-//         if(slow->next!=NULL)
-//         {
-//             slow->val=slow->next->val;
-//             ListNode* temp=slow->next;
-//             slow->next=temp->next;
-//         }
-//         else
-//         {
-            
-//         }
+        delete slow;
         return head;
     }
 };
