@@ -3,13 +3,11 @@ public:
     vector<int> productQueries(int n, vector<vector<int>>& queries) {
             int sum=0;
             int i=0;
-            int flag=0;
             while(true)
             {
                 sum+=pow(2,i);
                 if(n==pow(2,i))
                 {
-                    flag=1;
                     break;
                 }
                 else if(sum>=n)
@@ -41,7 +39,7 @@ public:
                 res=(res*temp[c])%1000000007;
                 c++;
             }
-            rs.push_back((int)res);
+            rs.push_back(res);
         }
         return rs;
     }
