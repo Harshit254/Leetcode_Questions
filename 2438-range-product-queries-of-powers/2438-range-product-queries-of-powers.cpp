@@ -30,10 +30,9 @@ public:
         vector<int>rs;
         for(int j=0;j<queries.size();j++)
         {
-            int a=queries[j][0];
             int b=queries[j][1];
+            int c=queries[j][0]+1;
             long long int res=temp[queries[j][0]];
-            int c=a+1;
             while(c<=b)
             {
                 res=(res*temp[c])%1000000007;
