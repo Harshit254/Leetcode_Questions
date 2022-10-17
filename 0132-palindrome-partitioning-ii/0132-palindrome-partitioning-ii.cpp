@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int function(int i,string s,vector<int>&dp)
+    int function(int i,string &s,vector<int>&dp)
     {
         if(i==s.size())
         {
