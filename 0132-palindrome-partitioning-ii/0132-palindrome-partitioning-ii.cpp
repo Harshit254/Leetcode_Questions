@@ -33,7 +33,24 @@ public:
         return true;
     }
     int minCut(string s) {
-        vector<int>dp(s.size(),-1);
-        return function(0,s,dp)-1;
+        vector<int>dp(s.size()+1,0);
+        dp[s.size()]=0;
+        for(int i=s.size()-1;i>=0;i--)
+        {
+            int mini=1e9;
+            for(int j=i;j<s.size();j++)
+            {
+                if(ispalindrome(s,i,j))
+                {
+                    int cost=1+dp[j+1];
+                    if(cost<mini)
+                    {
+                        mini=cost;
+                    }
+                }
+            }
+            dp[i]=mini;
+        }
+        return dp[0]-1;
     }
 };
