@@ -7,16 +7,16 @@ public:
             adj[i[0]].push_back({i[1],i[2]});
         }
         vector<int>dist(n,1e9);
-        priority_queue<pair<int,pair<int,int>>,vector<pair<int,pair<int,int>>>,greater<pair<int,pair<int,int>>>>pq;
+        //priority_queue<pair<int,pair<int,int>>,vector<pair<int,pair<int,int>>>,greater<pair<int,pair<int,int>>>>pq;
         dist[src]=0;
-        //queue<pair<int,pair<int,int>>>pq;
+        queue<pair<int,pair<int,int>>>pq;
         pq.push({-1,{src,0}});
         int mini=INT_MAX;
         while(!pq.empty())
         {
-            int stop=pq.top().first;
-            int node=pq.top().second.first;
-            int dis=pq.top().second.second;
+            int stop=pq.front().first;
+            int node=pq.front().second.first;
+            int dis=pq.front().second.second;
             pq.pop();
             if(node==dst && stop<=k) mini=min(dis,mini);
             for(auto i:adj[node])
