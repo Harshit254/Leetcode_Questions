@@ -30,7 +30,7 @@ public:
             prev=curr;
             curr=next;
         }
-        head->next=reverseKGroup(curr,k);
+        head->next=reverseKGroup(next,k);
         
         return prev;
         
